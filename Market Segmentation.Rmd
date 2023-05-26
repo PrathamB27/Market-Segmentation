@@ -43,5 +43,9 @@ KmeansClustering = kmeans(HubwayNormalized, centers = 10)
 table(KmeansClustering$cluster)
 
 ```
+# Average ride duration in each cluster
+```{r}
+tapply(data$Duration, KmeansClustering$cluster,mean)
+```
 
 
