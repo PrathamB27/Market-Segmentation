@@ -27,7 +27,7 @@ data = read.csv("HubwayTrips.csv")
 
 # Normalize the data 
 ```{r}
-install.packages("caret", dependencies = TRUE)
+install.packages("caret")
 library(caret)
 ```
 
