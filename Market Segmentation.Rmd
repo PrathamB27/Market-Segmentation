@@ -2,7 +2,9 @@
 title: "Market Segmentation"
 author: "PrathamB"
 date: "2023-05-25"
-output: word_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -27,7 +29,7 @@ data = read.csv("HubwayTrips.csv")
 
 # Normalize the data 
 ```{r}
-install.packages("caret")
+install.packages("caret",repos = "http://cran.us.r-project.org")
 library(caret)
 ```
 
@@ -48,7 +50,7 @@ table(KmeansClustering$cluster)
 tapply(data$Duration, KmeansClustering$cluster,mean)
 ```
 
-# Cluster with high morning commuters
+# Cluster analysis
 ```{r}
 tapply(data$Morning, KmeansClustering$cluster, mean)
 ```
@@ -77,3 +79,4 @@ tapply(data$Male, KmeansClustering$cluster, mean)
 tapply(data$Age, KmeansClustering$cluster, mean)
 ```
 
+# An interesting observation is that several clusters stick out as  commuter trips (clusters 5, 7, 8, 10). Clusters 3, 4, and 9 are interesting since they are on weekdays, but occur mostly during the afternoon. This indicates that the riders might be students (cluster 3 and 4) or maybe retired riders (cluster 9). Clusters 1, 2, and 6 look like leisurely weekend trips, which is interesting since Hubway is more typically used for short trips, and could be a business/marketing opportunity
