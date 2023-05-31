@@ -48,4 +48,32 @@ table(KmeansClustering$cluster)
 tapply(data$Duration, KmeansClustering$cluster,mean)
 ```
 
+# Cluster with high morning commuters
+```{r}
+tapply(data$Morning, KmeansClustering$cluster, mean)
+```
+```{r}
+tapply(data$Afternoon, KmeansClustering$cluster, mean)
+```
+```{r}
+tapply(data$Evening, KmeansClustering$cluster, mean)
+```
+```{r}
+tapply(data$Night, KmeansClustering$cluster, mean)
+```
+```{r}
+tapply(data$Weekday, KmeansClustering$cluster, mean)
+```
+
+```{r}
+tapply(data$Weekend, KmeansClustering$cluster, mean)
+```
+
+```{r}
+tapply(data$Male, KmeansClustering$cluster, mean)
+```
+
+```{r}
+tapply(data$Age, KmeansClustering$cluster, mean)
+```
 
